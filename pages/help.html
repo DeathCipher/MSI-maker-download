@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install help for MSI Maker</title>
+  <meta name="description" content="How to install, verify and uninstall MSI Maker on Windows, and what to do if Windows shows a warning.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Install help for MSI Maker">
+  <meta property="og:description" content="How to install, verify and uninstall MSI Maker on Windows, and what to do if Windows shows a warning.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/norrvik.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/javascript/theme.js"></script>
+  <script src="../assets/javascript/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M9 16h11m-4-5 5 5-5 5" fill="none" stroke="var(--on-accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="23" y="9" width="2.6" height="14" rx="1.3" fill="var(--on-accent)"/></svg><span>MSI Maker</span></a>
+      <nav aria-label="Main"><ul class="nav-list"><li><a href="../index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="help.html" aria-current="page">Help</a></li></ul></nav>
+      <div class="theme-switch">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li aria-current="page">Help</li></ol></nav>
+        <h1>Install help</h1>
+        <p>How to install, update and remove MSI Maker.</p>
+      </div>
+    </div>
+    <section class="section" aria-labelledby="install-title">
+      <div class="container">
+        <h2 id="install-title">Install MSI Maker</h2>
+        <ol class="steps steps--stacked">
+          <li><h3>Download the file</h3><p>Get <a href="download.html">MSI_Maker.msi</a> and wait for the download to finish.</p></li>
+          <li><h3>Optional: verify it</h3><p>Compare the file’s SHA-256 checksum with the one on the download page.</p></li>
+          <li><h3>Run the installer</h3><p>Double-click the file and follow the on-screen steps.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="warn-title">
+      <div class="container">
+        <h2 id="warn-title">If Windows shows a warning</h2>
+        <div class="notice">
+          <strong>“Windows protected your PC”</strong>
+          <p>Windows can show this for installers it does not recognise. Only continue if the checksum matches the one on the <a href="download.html">download page</a>: choose <em>More info</em>, then <em>Run anyway</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Questions</h2>
+        <div class="faq">
+          <details><summary>Which systems does it run on?</summary><div><p>MSI Maker is a Windows app and the .msi format is a Windows installer format. It is not for macOS or Linux.</p></div></details>
+          <details><summary>Do I need the WiX Toolset?</summary><div><p>No. MSI Maker does not need WiX.</p></div></details>
+          <details><summary>Where are my settings stored?</summary><div><p>Locally on your computer, so they are still there the next time you open the app.</p></div></details>
+          <details><summary>How do I uninstall it?</summary><div><p>Open Windows Settings, go to Apps, find MSI Maker in the list and choose Uninstall.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>MSI Maker by Death Cipher.</p>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="help.html">Install help</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* style.css — design tokens, base styles and layout.
+   Fonts are registered separately in norrvik.css. */
+
+:root {
+  color-scheme: light;
+  --font-sans: "Norrvik", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --bg: #f6f3ec;
+  --surface: #fffdf8;
+  --surface-sunken: #ece7da;
+  --text: #1d211f;
+  --text-muted: #525a56;
+  --border: #d6d0c1;
+  --accent: #0f5f58;
+  --accent-hover: #0b4a45;
+  --on-accent: #ffffff;
+  --focus: #0f5f58;
+  --success: #17653a;
+  --warning-bg: #fbf0d4;
+  --warning-border: #d9b24a;
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1.0625rem;
+  --fs-lg: 1.25rem;
+  --fs-h3: 1.25rem;
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --fs-h1: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+  --space-7: 4rem;
+  --space-8: 6rem;
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 2px rgb(29 33 31 / 0.08), 0 4px 12px rgb(29 33 31 / 0.06);
+  --container: 68rem;
+  --measure: 62ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121614;
+    --surface: #1a201d;
+    --surface-sunken: #0d100f;
+    --text: #ecefea;
+    --text-muted: #a7b0aa;
+    --border: #2f3934;
+    --accent: #5fc9bb;
+    --accent-hover: #86dacf;
+    --on-accent: #0b1512;
+    --focus: #86dacf;
+    --success: #6fd49a;
+    --warning-bg: #2a2410;
+    --warning-border: #8a6f1f;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121614;
+  --surface: #1a201d;
+  --surface-sunken: #0d100f;
+  --text: #ecefea;
+  --text-muted: #a7b0aa;
+  --border: #2f3934;
+  --accent: #5fc9bb;
+  --accent-hover: #86dacf;
+  --on-accent: #0b1512;
+  --focus: #86dacf;
+  --success: #6fd49a;
+  --warning-bg: #2a2410;
+  --warning-border: #8a6f1f;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+main { flex: 1; }
+
+h1, h2, h3 { line-height: 1.15; margin: 0 0 var(--space-4); letter-spacing: -0.01em; }
+h1 { font-size: var(--fs-h1); font-weight: 700; }
+h2 { font-size: var(--fs-h2); font-weight: 700; }
+h3 { font-size: var(--fs-h3); font-weight: 700; }
+p { margin: 0 0 var(--space-4); }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--accent-hover); }
+img, svg { max-width: 100%; height: auto; }
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.9em; }
+code { background: var(--surface-sunken); padding: 0.1em 0.35em; border-radius: 4px; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+.container { width: min(100% - 2.5rem, var(--container)); margin-inline: auto; }
+.section { padding-block: var(--space-7); }
+.section--alt { background: var(--surface); border-block: 1px solid var(--border); }
+.section__intro { max-width: var(--measure); margin-bottom: var(--space-6); color: var(--text-muted); }
+.section__intro h2 { color: var(--text); }
+.prose { max-width: var(--measure); }
+.muted { color: var(--text-muted); }
+.eyebrow { font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-3); }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: var(--space-4); top: -4rem; z-index: 100;
+  background: var(--accent); color: var(--on-accent); padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius); text-decoration: none; font-weight: 700;
+}
+.skip-link:focus { top: var(--space-4); color: var(--on-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,29 @@
+/* responsive.css — layout changes by viewport width. Base styles are mobile-first. */
+
+@media (max-width: 56rem) {
+  .hero { padding-block: var(--space-6) var(--space-5); }
+  .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .features { grid-template-columns: minmax(0, 1fr); }
+  .section { padding-block: var(--space-6); }
+}
+
+@media (max-width: 36rem) {
+  .site-header__inner { gap: var(--space-2) var(--space-4); }
+  .brand { width: 100%; }
+  .nav-list { flex: 1; }
+  .btn-row .btn { width: 100%; }
+  .spec-list { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .spec-list dd { margin-bottom: var(--space-3); }
+  .download-card { padding: var(--space-4); }
+  .checksum .btn { width: 100%; }
+}
+
+@media (min-width: 90rem) {
+  :root { --container: 74rem; }
+}
+
+@media print {
+  .site-header, .site-footer, .btn, .theme-switch { display: none; }
+  body { background: #fff; color: #000; }
+}
